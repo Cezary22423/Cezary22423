@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+    <title>Cennik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaf2f8; /* Błękitne tło */
+        }
+
+        .pricing-table {
+            width: 300px;
+            height: 700px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .pricing-option {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .pricing-option:hover {
+            background-color: #f2f2f2;
+        }
+
+        .selected-option {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+  <a href="index.html" class="red-arrow">
+    <img src="arrow.png" alt="Czerwona strzałka" width="50" height="50">
+    <div class="pricing-table">
+        <div class="pricing-option">Pisanie CV - 100 zł</div>
+        <div class="pricing-option">Redakcja CV - 80 zł</div>
+        <div class="pricing-option">Projektowanie CV - 120 zł</div>
+        <div class="pricing-option">Konsultacja CV - 60 zł</div>
+    </div>
+
+    <script>
+        var pricingOptions = document.getElementsByClassName('pricing-option');
+
+        for (var i = 0; i < pricingOptions.length; i++) {
+            pricingOptions[i].addEventListener('click', function() {
+                // Usuń klasę 'selected-option' z innych opcji
+                for (var j = 0; j < pricingOptions.length; j++) {
+                    pricingOptions[j].classList.remove('selected-option');
+                }
+
+                // Dodaj klasę 'selected-option' do wybranej opcji
+                this.classList.add('selected-option');
+            });
+        }
+    </script>
+      
+        
+      
+</body>
+</html>
